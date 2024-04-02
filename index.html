@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz Application</title>
+  <link rel="stylesheet" href="text.css">
+  <script src="script.js"></script>
+  <!-- <link rel="stylesheet" href="global.css"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login">
+    <section class="undraw-login-re-4vu2-1-wrapper">
+      <img class="undraw-login-re-4vu2-1-icon" loading="lazy" alt="" src="./public/undraw-login-re-4vu2-1.svg">
+    </section>
+    <section class="login-inner">
+      <div class="step-15-name-parent form-step" id="step-1">
+        <div class="step-15">STEP 1/5 : Name</div>
+        <div class="lets-start-with-container">
+          <p class="lets-start-with">Let's start with your name.</p>
+          <p class="what-should-we">What should we call you?</p>
+        </div>
+        <div class="rectangle-parent">
+          <div class="frame-child">
+            <input class="enter-your-name" id="name" name="name" placeholder="Enter your Name" type="text">
+            <div class="underline"></div>
+          </div>
+          <span class="error" id="name-error"></span>
+        </div>
+        <div class="next-button-wrapper">
+          <button class="rectangle-group next-btn" id="next-1" disabled>
+            <div class="frame-item"></div>
+            <b class="next">Next</b>
+          </button>
+        </div>
+      </div>
+      <div class="step-email form-step" id="step-2" style="display: none;">
+        <div class="step-15">STEP 2/5 : Email</div>
+        <div class="lets-start-with-container">
+          <p class="lets-start-with">Please provide your email address.</p>
+        </div>
+        <div class="rectangle-parent">
+          <div class="frame-child">
+            <input class="enter-your-email" id="email" name="email" placeholder="Enter your Email" type="email">
+            <div class="underline"></div>
+          </div>
+          <span class="error" id="email-error"></span>
+        </div>
+        <div class="next-button-wrapper">
+          <button class="rectangle-group back-btn" id="back-2" style="display: none;">
+            <div class="frame-item"></div>
+            <b class="back">Back</b>
+          </button>
+          <button class="rectangle-group next-btn" id="next-2" disabled>
+            <div class="frame-item"></div>
+            <b class="next">Next</b>
+          </button>
+        </div>
+      </div>
+      <div class="step-phone form-step" id="step-3" style="display: none;">
+        <div class="step-15">STEP 3/5 : Phone Number</div>
+        <div class="lets-start-with-container">
+          <p class="lets-start-with">Please provide your phone number.</p>
+        </div>
+        <div class="rectangle-parent">
+          <div class="frame-child">
+            <input class="enter-your-phone" id="phone" name="phone" placeholder="Enter your Phone Number" type="text">
+            <div class="underline"></div>
+          </div>
+          <span class="error" id="phone-error"></span>
+        </div>
+        <div class="next-button-wrapper">
+          <button class="rectangle-group back-btn" id="back-3" style="display: none;">
+            <div class="frame-item"></div>
+            <b class="back">Back</b>
+          </button>
+          <button class="rectangle-group next-btn" id="next-3" disabled>
+            <div class="frame-item"></div>
+            <b class="next">Next</b>
+          </button>
+        </div>
+      </div>
+      <div class="step-address form-step" id="step-4" style="display: none;">
+        <div class="step-15">STEP 4/5 : Address</div>
+        <div class="lets-start-with-container">
+          <p class="lets-start-with">Please provide your address.</p>
+        </div>
+        <div class="rectangle-parent">
+          <div class="frame-child">
+            <input class="enter-your-address" id="address" name="address" placeholder="Enter your Address" type="text">
+            <div class="underline"></div>
+          </div>
+          <span class="error" id="address-error"></span>
+        </div>
+        <div class="next-button-wrapper">
+          <button class="rectangle-group back-btn" id="back-4" style="display: none;">
+            <div class="frame-item"></div>
+            <b class="back">Back</b>
+          </button>
+          <button class="rectangle-group next-btn" id="next-4" disabled>
+            <div class="frame-item"></div>
+            <b class="next">Next</b>
+          </button>
+        </div>
+      </div>
+      <!-- Step 5: Resume Upload -->
+      <div class="step-resume form-step" id="step-5" style="display: none;">
+        <div class="step-15">STEP 5/5 : Resume Upload</div>
+        <div class="lets-start-with-container">
+          <p class="lets-start-with">Please upload a valid resume (PDF or DOCX format, max size 5 MB).</p>
+        </div>
+        <div class="rectangle-parent">
+          <div class="frame-child">
+            <input class="upload-resume" id="resume" name="resume" type="file" accept=".pdf,.docx" onchange="displayFileName()">
+            <label for="resume" class="custom-file-upload">Choose File</label>
+          </div>
+          <br>
+          <span class="error" id="resume-error"></span>
+          <br>
+          <span id="file-name"></span>
+          <br>
+        </div>
+        <div class="next-button-wrapper">
+          <button class="rectangle-group back-btn" id="back-5" style="display: none;">
+            <div class="frame-item"></div>
+            <b class="back">Back</b>
+          </button>
+          <a href="final.html"><button class="rectangle-group next-btn" id="next-5" disabled>
+            <div class="frame-item"></div>
+            <b class="next" id="f-res">Next</b>
+          </button></a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="result-message" >
+    <p>Congratulations! Your response has been submitted.</p>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const nextButton5 = document.getElementById('next-5');
+      const resultMessage = document.getElementById('result-message'); // Add this line
+
+      nextButton5.addEventListener('click', function() {
+        const step5 = document.getElementById('step-5');
+        step5.style.display = 'none';
+        // Display the result message instead of the next step
+        resultMessage.style.display = 'block';
+      });
+    });
+
+    function displayFileName() {
+      const fileInput = document.getElementById('resume');
+      const fileName = document.getElementById('file-name');
+      if (fileInput.files.length > 0) {
+        fileName.textContent = 'Selected file: ' + fileInput.files[0].name;
+      } else {
+        fileName.textContent = ''; // Clear the text if no file is selected
+      }
+    }
+  </script>
+</body>
+</html>

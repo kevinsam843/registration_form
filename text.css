@@ -1,0 +1,142 @@
+/* Common styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0; /* Subtle background color */
+  }
+  
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .undraw-login-re-4vu2-1-wrapper {
+    margin-bottom: 30px; /* Add space between image and form */
+  }
+  
+  .login-inner {
+    width: 80%;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  }
+  
+  .step-15 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  
+  .lets-start-with,
+  .what-should-we {
+    font-size: 16px;
+  }
+  
+  .rectangle-parent {
+    position: relative;
+    margin-bottom: 20px; /* Add space between input field and error message */
+  }
+  
+  .enter-your-name,
+  .enter-your-email,
+  .enter-your-phone,
+  .enter-your-address { /* Common styles for input fields */
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 30px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif; /* Matches the font family of other text */
+  }
+  
+  .enter-your-address { /* Specific styles for address input */
+    margin-bottom: 10px; /* Add margin at the bottom */
+  }
+  
+  .enter-your-address.invalid {
+    border-color: #ff0000; /* Change border color for invalid input */
+  }
+  
+  .enter-your-address:focus {
+    border-color: #007bff; /* Change border color on focus */
+  }
+  
+  .underline {
+    width: 100%;
+    height: 2px;
+    background-color: #007bff; /* Underline color */
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 30px; /* Increase the margin-top for more spacing */
+    margin-bottom: 20px; /* Keep the margin-bottom as it is or adjust as needed */
+  }
+  
+  .next-button-wrapper {
+    margin-top: 20px; /* Add space between input box and next button */
+  }
+  
+  .next-btn,
+  .back-btn {
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .next-btn:disabled,
+  .back-btn:disabled {
+    background-color: #c7c7c7; /* Gray out disabled button */
+    cursor: not-allowed;
+  }
+  
+  /* Add styles for the Choose File button */
+  .upload-resume {
+    display: none; /* Hide the default file input */
+  }
+  
+  .custom-file-upload {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background-color: #007bff; /* Blue color for the button */
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .custom-file-upload:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+  
+  #file-name {
+    font-family: 'Poppins', sans-serif; /* Match the font family of other text */
+    font-size: 14px; /* Adjust the font size */
+    padding: 5px 10px; /* Add padding to the file name */
+    margin-top: 20px; /* Add more space between the file name and the input field */
+  }
+  .result-message p{
+    text-align: center;
+    margin: 50px;
+  }
+  
